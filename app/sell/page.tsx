@@ -211,7 +211,6 @@ export default function SellPage() {
       setLocation("");
       setCondition("Like New");
       setDescription("");
-
     } catch (error) {
       console.error(
         "Create listing error:",
@@ -234,7 +233,7 @@ export default function SellPage() {
   if (checkingLogin) {
     return (
       <main className="flex min-h-screen items-center justify-center bg-[#f7f7f5]">
-        <p className="font-semibold text-zinc-500">
+        <p className="font-semibold text-zinc-700">
           Checking login...
         </p>
       </main>
@@ -242,17 +241,17 @@ export default function SellPage() {
   }
 
   return (
-    <main className="min-h-screen bg-[#f7f7f5] px-5 py-10">
+    <main className="min-h-screen bg-[#f7f7f5] px-5 py-10 text-zinc-900">
       <div className="mx-auto max-w-3xl">
 
         {/* HEADER */}
         <div className="mb-8 flex items-center justify-between">
           <div>
-            <h1 className="text-3xl font-black">
+            <h1 className="text-3xl font-black text-zinc-900">
               Sell your item
             </h1>
 
-            <p className="mt-2 text-zinc-500">
+            <p className="mt-2 text-zinc-600">
               Add photos and details of your product.
             </p>
           </div>
@@ -260,7 +259,7 @@ export default function SellPage() {
           <button
             type="button"
             onClick={() => router.push("/")}
-            className="rounded-xl border border-zinc-200 bg-white px-4 py-2 text-sm font-bold hover:bg-zinc-50"
+            className="rounded-xl border border-zinc-200 bg-white px-4 py-2 text-sm font-bold text-zinc-900 hover:bg-zinc-50"
           >
             ← Home
           </button>
@@ -270,11 +269,11 @@ export default function SellPage() {
 
           {/* PHOTOS */}
           <div>
-            <h2 className="text-lg font-bold">
+            <h2 className="text-lg font-bold text-zinc-900">
               Product Photos
             </h2>
 
-            <p className="mt-1 text-sm text-zinc-500">
+            <p className="mt-1 text-sm text-zinc-600">
               Add clear photos of your product.
             </p>
 
@@ -283,11 +282,11 @@ export default function SellPage() {
                 📸
               </span>
 
-              <span className="mt-3 font-bold">
+              <span className="mt-3 font-bold text-zinc-900">
                 Add Photos
               </span>
 
-              <span className="mt-1 text-xs text-zinc-400">
+              <span className="mt-1 text-xs text-zinc-500">
                 Camera or Gallery
               </span>
 
@@ -327,7 +326,7 @@ export default function SellPage() {
 
           {/* PRODUCT NAME */}
           <div className="mt-8">
-            <label className="text-sm font-bold">
+            <label className="text-sm font-bold text-zinc-900">
               Product Name
             </label>
 
@@ -338,13 +337,13 @@ export default function SellPage() {
                 setTitle(e.target.value)
               }
               placeholder="e.g. iPhone 17"
-              className="mt-2 w-full rounded-xl border border-zinc-200 px-4 py-3 outline-none focus:border-[#ff5a1f]"
+              className="mt-2 w-full rounded-xl border border-zinc-200 bg-white px-4 py-3 text-zinc-900 placeholder:text-zinc-400 outline-none focus:border-[#ff5a1f]"
             />
           </div>
 
           {/* PRICE */}
           <div className="mt-5">
-            <label className="text-sm font-bold">
+            <label className="text-sm font-bold text-zinc-900">
               Price
             </label>
 
@@ -356,13 +355,13 @@ export default function SellPage() {
                 setPrice(e.target.value)
               }
               placeholder="e.g. 35000"
-              className="mt-2 w-full rounded-xl border border-zinc-200 px-4 py-3 outline-none focus:border-[#ff5a1f]"
+              className="mt-2 w-full rounded-xl border border-zinc-200 bg-white px-4 py-3 text-zinc-900 placeholder:text-zinc-400 outline-none focus:border-[#ff5a1f]"
             />
           </div>
 
           {/* CATEGORY */}
           <div className="mt-5">
-            <label className="text-sm font-bold">
+            <label className="text-sm font-bold text-zinc-900">
               Category
             </label>
 
@@ -371,9 +370,12 @@ export default function SellPage() {
               onChange={(e) =>
                 setCategory(e.target.value)
               }
-              className="mt-2 w-full rounded-xl border border-zinc-200 bg-white px-4 py-3 outline-none focus:border-[#ff5a1f]"
+              className="mt-2 w-full rounded-xl border border-zinc-200 bg-white px-4 py-3 text-zinc-900 outline-none focus:border-[#ff5a1f]"
             >
-              <option value="">
+              <option
+                value=""
+                className="text-zinc-500"
+              >
                 Select category
               </option>
 
@@ -413,7 +415,7 @@ export default function SellPage() {
 
           {/* LOCATION */}
           <div className="mt-5">
-            <label className="text-sm font-bold">
+            <label className="text-sm font-bold text-zinc-900">
               Location
             </label>
 
@@ -424,13 +426,13 @@ export default function SellPage() {
                 setLocation(e.target.value)
               }
               placeholder="e.g. Patna"
-              className="mt-2 w-full rounded-xl border border-zinc-200 px-4 py-3 outline-none focus:border-[#ff5a1f]"
+              className="mt-2 w-full rounded-xl border border-zinc-200 bg-white px-4 py-3 text-zinc-900 placeholder:text-zinc-400 outline-none focus:border-[#ff5a1f]"
             />
           </div>
 
           {/* SELLER PHONE */}
           <div className="mt-5">
-            <label className="text-sm font-bold">
+            <label className="text-sm font-bold text-zinc-900">
               Mobile Number
             </label>
 
@@ -450,17 +452,17 @@ export default function SellPage() {
               }}
               maxLength={10}
               placeholder="9876543210"
-              className="mt-2 w-full rounded-xl border border-zinc-200 bg-zinc-50 px-4 py-3 outline-none focus:border-[#ff5a1f]"
+              className="mt-2 w-full rounded-xl border border-zinc-200 bg-zinc-50 px-4 py-3 text-zinc-900 placeholder:text-zinc-400 outline-none focus:border-[#ff5a1f]"
             />
 
-            <p className="mt-1 text-xs text-zinc-400">
+            <p className="mt-1 text-xs text-zinc-500">
               This number will be shown to buyers.
             </p>
           </div>
 
           {/* CONDITION */}
           <div className="mt-5">
-            <label className="text-sm font-bold">
+            <label className="text-sm font-bold text-zinc-900">
               Condition
             </label>
 
@@ -469,7 +471,7 @@ export default function SellPage() {
               onChange={(e) =>
                 setCondition(e.target.value)
               }
-              className="mt-2 w-full rounded-xl border border-zinc-200 bg-white px-4 py-3 outline-none focus:border-[#ff5a1f]"
+              className="mt-2 w-full rounded-xl border border-zinc-200 bg-white px-4 py-3 text-zinc-900 outline-none focus:border-[#ff5a1f]"
             >
               <option value="Like New">
                 Like New
@@ -491,7 +493,7 @@ export default function SellPage() {
 
           {/* DESCRIPTION */}
           <div className="mt-5">
-            <label className="text-sm font-bold">
+            <label className="text-sm font-bold text-zinc-900">
               Description
             </label>
 
@@ -504,7 +506,7 @@ export default function SellPage() {
                 )
               }
               placeholder="Tell buyers about your product..."
-              className="mt-2 w-full resize-none rounded-xl border border-zinc-200 px-4 py-3 outline-none focus:border-[#ff5a1f]"
+              className="mt-2 w-full resize-none rounded-xl border border-zinc-200 bg-white px-4 py-3 text-zinc-900 placeholder:text-zinc-400 outline-none focus:border-[#ff5a1f]"
             />
           </div>
 
